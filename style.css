@@ -17,3 +17,18 @@
 #searchButton{
     padding: 10px;
 }
+
+.dbNamn{
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
