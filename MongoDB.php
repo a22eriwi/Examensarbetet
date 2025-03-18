@@ -1,4 +1,5 @@
 <?php
+//Composer
 require '../vendor/autoload.php';
 
 // Connect to MongoDB
@@ -40,36 +41,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
         </form>
     </div>
 </div>
-
-<?php
-if (!empty($documents) && count($documents) > 0) {
-?>
-<div id="centerTable">
-    <table>
-        <tr>
-            <th>Subbreddit</th>
-            <th>creation_date</th>
-            <th>Upvotes</th>
-            <th>Title</th>
-            <th>Body</th>
-            <th>num_comments</th>
-            <th>URL</th>
-        </tr>
-
-        <?php foreach ($documents as $doc): ?>
+<?php if (!empty($documents) && count($documents) > 0) { ?>
+    <div id="centerTable">
+        <table>
             <tr>
-                <td><?php echo isset($doc['Subreddit']) ? htmlspecialchars((string)$doc['Subreddit']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['creation_date'])? htmlspecialchars($doc['creation_date']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['Upvotes']) ? htmlspecialchars($doc['Upvotes']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['Title']) ? htmlspecialchars($doc['Title']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['Body']) ? htmlspecialchars($doc['Body']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['num_comments']) ? htmlspecialchars($doc['num_comments']) : 'N/A'; ?></td>
-                <td><?php echo isset($doc['URL']) ? htmlspecialchars($doc['URL']) : 'N/A'; ?></td>
+                <th>Subbreddit</th>
+                <th>creation_date</th>
+                <th>Upvotes</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>num_comments</th>
+                <th>URL</th>
             </tr>
-        <?php endforeach; ?>
-    </table>
-</div>
+            <?php foreach ($documents as $doc): ?>
+                <tr>
+                    <td><?php echo isset($doc['Subreddit']) ? htmlspecialchars((string)$doc['Subreddit']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['creation_date'])? htmlspecialchars($doc['creation_date']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['Upvotes']) ? htmlspecialchars($doc['Upvotes']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['Title']) ? htmlspecialchars($doc['Title']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['Body']) ? htmlspecialchars($doc['Body']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['num_comments']) ? htmlspecialchars($doc['num_comments']) : 'N/A'; ?></td>
+                    <td><?php echo isset($doc['URL']) ? htmlspecialchars($doc['URL']) : 'N/A'; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
 <?php } ?>
-
 </body>
 </html>
