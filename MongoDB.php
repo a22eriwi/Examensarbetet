@@ -53,15 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
                 <th>num_comments</th>
                 <th>URL</th>
             </tr>
-            <?php foreach ($documents as $doc): ?>
+            <?php foreach ($documents as $column): ?>
                 <tr>
-                    <td><?php echo isset($doc['Subreddit']) ? htmlspecialchars((string)$doc['Subreddit']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['creation_date'])? htmlspecialchars($doc['creation_date']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['Upvotes']) ? htmlspecialchars($doc['Upvotes']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['Title']) ? htmlspecialchars($doc['Title']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['Body']) ? htmlspecialchars($doc['Body']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['num_comments']) ? htmlspecialchars($doc['num_comments']) : 'N/A'; ?></td>
-                    <td><?php echo isset($doc['URL']) ? htmlspecialchars($doc['URL']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['Subreddit']) ? htmlspecialchars((string)$column['Subreddit']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['creation_date'])? htmlspecialchars($column['creation_date']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['Upvotes']) ? htmlspecialchars($column['Upvotes']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['Title']) ? htmlspecialchars($column['Title']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['Body']) ? htmlspecialchars($column['Body']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['num_comments']) ? htmlspecialchars($column['num_comments']) : 'N/A'; ?></td>
+                    <td><?php echo isset($column['URL']) ? htmlspecialchars($column['URL']) : 'N/A'; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
