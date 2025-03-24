@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
 <div class="sok">
     <div class="centrera">
         <h1 class="dbNamn"><a href="MongoDB.php" id="noUnderline">Search MongoDB</a></h1>
-        <form action="" method="post">
+        <form action="" method="post" id="searchForm">
             <input id="searchBar" type="text" name="search" placeholder="Search...">
             <button id="searchButton" type="submit">Search</button>
         </form>
