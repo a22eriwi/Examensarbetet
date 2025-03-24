@@ -8,45 +8,53 @@
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-//Set total measurements
-const totalMeasurements = 10;
-let i = 0;
-let allMeasurements = 0;
 
-//Create array with subreddits
-const subreddits = ["AdviceForTeens", "Anxiety"];
+(function () {
+    'use strict';
 
-//Create variable searchBar and define it as the searchBar
-const searchBar = document.getElementById("searchBar");
-//Create variable form and define it as the searchForm
-const form = document.getElementById("searchForm");
 
-while (i < totalMeasurements ){
-    console.log(subreddits[i % subreddits.length]); 
+    //Set total measurements
+    const totalMeasurements = 10;
+    let i = 0;
+    let allMeasurements = 0;
 
-    //Save the current element in the array (subbreddit) to a variable
-    let subreddit = (subreddits[i % subreddits.length])
-    console.log(subreddit);
+    //Create array with subreddits
+    const subreddits = ["AdviceForTeens", "Anxiety"];
+    //Create variable searchBar and define it as the searchBar
+    const searchBar = document.getElementById("searchBar");
+    //Create variable form and define it as the searchForm
+    const form = document.getElementById("searchForm");
 
-    //Set the value of the searchBar to the current element in array
-    searchBar.value = subreddit; 
+    async function measureSearchTime() {
+        while (i < totalMeasurements) {
+            console.log(subreddits[i % subreddits.length]);
 
-    // Start timer and save it to var 'measurement1'
-    let measurement1 = performance.now();
+            //Save the current element in the array (subbreddit) to a variable
+            let subreddit = (subreddits[i % subreddits.length])
+            console.log(subreddit);
 
-    // Submit the form
-    form.submit();
+            //Set the value of the searchBar to the current element in array
+            searchBar.value = subreddit;
 
-    // Stop timer and save it to var 'measurement2'
-    let measurement2 = performance.now();
+            // Start timer and save it to var 'measurement1'
+            let measurement1 = performance.now();
 
-    let measurementTime = measurement2 - measurement1;
-    let measurementData = subreddit + "," + measurementTime;
-    allMeasurements += measurementTime;
+            // Submit the form
+            form.submit();
 
-    console.log(measurementData);
-    console.log(allMeasurements);
+            // Stop timer and save it to var 'measurement2'
+            let measurement2 = performance.now();
 
-    i++;
-}
+            let measurementTime = measurement2 - measurement1;
+            let measurementData = subreddit + "," + measurementTime;
+            allMeasurements += measurementTime;
 
+            console.log(measurementData);
+            console.log(allMeasurements);
+
+            i++;
+        }
+    }
+
+    measureSearchTime(); // Run the function
+})();
