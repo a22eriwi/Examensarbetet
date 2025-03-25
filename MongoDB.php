@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
     $search = trim($_POST['search']);
 
     $documents = iterator_to_array($collection->find([
-        '$text' => ['$search' => $search]
+        'Subreddit' => $search
     ]));
 }
 ?>
