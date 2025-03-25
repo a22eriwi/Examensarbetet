@@ -8,7 +8,7 @@ $mongoClient = new MongoDB\Client("mongodb://localhost:27017");
 $database = $mongoClient->Reddit;
 $collection = $database->RedditData;
 
-//Create empty erray that recieves the documents from collection
+//Create empty array that recieves the documents from collection
 $documents = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
