@@ -52,7 +52,7 @@ if (!empty($searchQuery)) {
 <div class="sok">
     <div class="centrera">
         <h1 class="dbNamn"><a href="Couchbase.php" id="noUnderline">Search Couchbase</a></h1>
-        <form action="" method="post">
+        <form action="" method="post" id="searchForm">
             <input id="searchBar" type="text" name="search" placeholder="Search...">
             <button id="searchButton" type="submit">Search</button>
         </form>
