@@ -16,33 +16,43 @@
     //Set total measurements
     const totalMeasurements = 10;
 
+    //Create two variables, one for the current measurement cycle and one that has all the measurements
     let measurementIndex = parseInt(localStorage.getItem("measurementIndex") || "0");
     let allMeasurements = localStorage.getItem("allMeasurements") || "";
 
     //Create array with subreddits
     const subreddits = ["AdviceForTeens", "Anxiety"];
 
+    //All code inside this function will only execute when the page is fully loaded
     window.addEventListener("load", function () {
-        //Save the id of the form and searchbar to a variable
+
+        //Save the id of the form and searchbar to variables
         const searchBar = document.getElementById("searchBar");
         const form = document.getElementById("searchForm");
 
+        //Create variables in order to retrieve from localStorage 
         let storedStartTime = parseFloat(localStorage.getItem("measurementStartTime") || "0");
         let storedSubreddit = localStorage.getItem("measurementSubreddit");
 
         if (storedStartTime) {
-            // Stop timer and save it to var 'measurement2'
+            // Take new time stamp and save to variable
             let measurement2 = performance.timeOrigin + performance.now();
+
+            //Calculate the difference between latest and first timestamp
             let measurementTime = measurement2 - storedStartTime;
 
+            //Create a string that contains stordedSubbreddit and the mea
             let measurementData = `${storedSubreddit},${measurementTime.toFixed(2)}\n`;
             allMeasurements += measurementData;
 
+            //Sets the local storage "allMeasurements" to the current measurements that exist
             localStorage.setItem("allMeasurements", allMeasurements);
 
+            //Adds +1 to the measurementIndex
             measurementIndex++;
-            localStorage.setItem("measurementIndex", measurementIndex);
 
+            //Sets current measurementIndex (Measure cycle)
+            localStorage.setItem("measurementIndex", measurementIndex);
         }
         if (measurementIndex < totalMeasurements) {
             //Save the current element in the array (subbreddit) to a variable
@@ -51,9 +61,10 @@
             //Set the value of the searchBar to the current element in array
             searchBar.value = subreddit;
 
-            // Start timer and save it to var 'measurement1'
+            // Start timer and save it to 'measurement1'
             let measurement1 = performance.timeOrigin + performance.now();
 
+            
             localStorage.setItem("measurementStartTime", measurement1);
             localStorage.setItem("measurementSubreddit", subreddit);
 
