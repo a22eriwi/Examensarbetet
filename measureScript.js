@@ -64,7 +64,6 @@
             // Start timer and save it to 'measurement1'
             let measurement1 = performance.timeOrigin + performance.now();
 
-            
             localStorage.setItem("measurementStartTime", measurement1);
             localStorage.setItem("measurementSubreddit", subreddit);
 

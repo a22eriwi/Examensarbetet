@@ -36,7 +36,6 @@ if (!empty($searchQuery)) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
