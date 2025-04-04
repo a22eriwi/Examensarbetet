@@ -5,8 +5,8 @@ require '../vendor/autoload.php';
 // Connect to MongoDB
 $mongoClient = new MongoDB\Client("mongodb://localhost:27017");
 
-$database = $mongoClient->Reddit;
-$collection = $database->RedditData;
+$database = $mongoClient->redditData;
+$collection = $database->redditDataset25;
 
 //Create empty array that recieves the documents from collection
 $documents = [];

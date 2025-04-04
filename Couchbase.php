@@ -12,7 +12,7 @@ $options = new ClusterOptions();
 $options->credentials("root", "hejhej");
 
 $cluster = new Cluster($connectionString, $options);
-$bucket = $cluster->bucket("reddit");
+$bucket = $cluster->bucket("redditDataset25");
 $collection = $bucket->defaultCollection();
 
 $searchQuery = isset($_POST['search']) ? trim($_POST['search']) : '';
@@ -22,14 +22,14 @@ $results = [];
 if (!empty($searchQuery)) {
     try {
         // Positional parameter SELECT query
-        $queryString = "SELECT * FROM `reddit` WHERE Subreddit = $1";
+        $queryString = "SELECT * FROM redditDataset25 WHERE Subreddit = $1";
         $queryOptions = new QueryOptions();
         $queryOptions->positionalParameters([$searchQuery]);
 
         $queryResult = $cluster->query($queryString, $queryOptions);
 
         foreach ($queryResult->rows() as $rad) {
-            $results[] = $rad['reddit'];
+            $results[] = $rad['redditDataset25'];
         }
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();

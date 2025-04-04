@@ -13,7 +13,7 @@ try {
         $sokOrd = $_POST['search'];
 
         //Prepared SQL statement with placeholder
-        $stmt = $conn->prepare("SELECT * FROM reddit_data WHERE Subreddit= :sokOrd");
+        $stmt = $conn->prepare("SELECT * FROM redditDataset25 WHERE Subreddit= :sokOrd");
 
         //Search term bound to the placeholder
         $stmt->bindParam(':sokOrd', $sokOrd, PDO::PARAM_STR);
