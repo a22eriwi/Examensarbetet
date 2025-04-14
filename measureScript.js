@@ -44,7 +44,7 @@
     let allMeasurements = localStorage.getItem("allMeasurements") || "";
 
     //Create array with subreddits
-    const subreddits = ["AdviceForTeens", "Anxiety", "ApplyingToCollege", "astrology", "business", "careerguidance", "college", "Colombia", "computer_science", "COVID19", "dating", "depression", "employment", "engineering", "Entrepreneur", "feminism", "GradSchool", "kidsrights", "Mexico_spanishlanguage", "NeutralPolitics", "povertyfinance", "science", "SuicideWatch", "teenagers", "whatsbotheringyou", "YouthandGovernment", "youthshouldknow", "YouthRights"];
+    const subreddits = ["AdviceForTeens", "Anxiety", "ApplyingToCollege", "astrology", "business", "careerguidance", "college", "Colombia", "computerscience", "COVID19", "dating", "depression_help", "jobs", "engineering", "Entrepreneur", "Feminism", "GradSchool", "kidsrights", "mexico", "NeutralPolitics", "povertyfinance", "science", "SuicideWatch", "teenagers", "whatsbotheringyou", "YouthandGovernment", "youthshouldknow", "YouthRights"];
 
     let order = JSON.parse(localStorage.getItem("order") || null);
 
