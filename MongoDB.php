@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['search'])) {
                     <td><?php echo isset($column['creation_date'])? htmlspecialchars($column['creation_date']) : 'N/A'; ?></td>
                     <td><?php echo isset($column['Upvotes']) ? htmlspecialchars($column['Upvotes']) : 'N/A'; ?></td>
                     <td><?php echo isset($column['Title']) ? htmlspecialchars($column['Title']) : 'N/A'; ?></td>
-                    <td><?php echo isset($column['Body']) ? htmlspecialchars($column['Body']) : 'N/A'; ?></td>
+                    <td id="body"><?php echo isset($column['Body']) ? htmlspecialchars($column['Body']) : 'N/A'; ?></td>
                     <td><?php echo isset($column['num_comments']) ? htmlspecialchars($column['num_comments']) : 'N/A'; ?></td>
                     <td><?php echo isset($column['URL']) ? htmlspecialchars($column['URL']) : 'N/A'; ?></td>
                 </tr>
