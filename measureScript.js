@@ -12,7 +12,6 @@
 
 (function () {
     'use strict';
-
     const seed = 42423;
 
     //Seed
@@ -24,7 +23,6 @@
             return((t ^ t >>> 14) >>> 0) /4294967296;
         };
     }
-
     //Randomize array function
     function randomizeArray(array, seed) {
         const random = mulberry32(seed);
@@ -70,10 +68,10 @@
             let measurement2 = performance.timeOrigin + performance.now();
 
             //Calculate the difference between latest and first timestamp
-            let measurementTime = measurement2 - storedStartTime;
+            let measurementTime = Math.round(measurement2 - storedStartTime);
 
             //Create a string that contains stordedSubbreddit and the measurement time
-            let measurementData = `${storedSubreddit},${measurementTime.toFixed(2)}\n`;
+            let measurementData = `${storedSubreddit},${measurementTime}\n`;
             allMeasurements += measurementData;
 
             //Sets the local storage "allMeasurements" to the current measurements that exist
