@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         Measure script
-// @namespace    http://tampermonkey.net/
 // @version      2024-09-27
 // @description  measureScript
 // @author       You
@@ -35,7 +34,7 @@
     }
 
     //Set total measurements
-    const totalMeasurements = 28;
+    const totalMeasurements = 700;
 
     //Create two variables, one for the current measurement cycle and one that has all the measurements
     let measurementIndex = parseInt(localStorage.getItem("measurementIndex") || "0");
